@@ -39,3 +39,39 @@ app.listen(port, () => {
 //     navItems.style.display = "flex";
 //   }
 // }
+
+const wifiForm = document.getElementById("wifiForm");
+const qrcodeDiv = document.getElementById("qrcode");
+
+wifiForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const ssid = document.getElementById("ssid").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const security = document.getElementById("security").value.trim();
+
+  // Validate the input and handle errors
+  // ...
+
+  try {
+    const response = await fetch("/generateQRCode", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ssid, password, security }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      const qrCodeUrl = data.qrCodeUrl;
+      qrcodeDiv.innerHTML = `<img src="${qrCodeUrl}" alt="Wi-Fi QR Code">`;
+    } else {
+      console.error("Error generating QR code:", response.status);
+      qrcodeDiv.innerHTML = "<p>Error generating QR code.</p>";
+    }
+  } catch (err) {
+    console.error("Error generating QR code:", err);
+    qrcodeDiv.innerHTML = "<p>Error generating QR code.</p>";
+  }
+});
