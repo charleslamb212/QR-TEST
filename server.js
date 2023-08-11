@@ -1,33 +1,29 @@
-const express = require("express");
-const qrcode = require("qrcode");
-const path = require("path");
-
+const express = require('express');
+const qrcode = require('qrcode');
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT || 3000;
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Define a route for serving the index.html file
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
 });
 
-//API enpoint to generate QR code
-app.post("/generateQRCode", async (req, res) => {
-  const { ssid, password, security } = req.body;
+app.post('/generate', (req, res) => {
+  const { ssid, password } = req.body;
+  const wifiConfig = `WIFI:T:WPA;S:${ssid};P:${password};;`;
 
-  // Generate the Wi-Fi configuration string
-  const wifiConfig = `WIFI:T:${security};S:${ssid};P:${password};;`;
+  qrcode.toDataURL(wifiConfig, (err, qrData) => {
+    if (err) {
+      console.error(err);
+      return res.sendStatus(500);
+    }
 
-  try {
-    const qrCodeUrl = await qrcode.toDataURL(wifiConfig);
-    res.json({ qrCodeUrl });
-  } catch (err) {
-    console.error("Error generating QR code:", err);
-    res.status(500).json({ error: "Error generating QR code" });
-  }
+    res.send(`<img src="${qrData}" alt="WiFi QR Code"/>`);
+  });
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });

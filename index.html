@@ -1,42 +1,21 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>QR Code Generator</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="navbar-container">
-        <a href="#" class="navbar-brand">Home</a>
-        <button class="navbar-toggle" onclick="toggleMenu()">&#9776;</button>
-        <ul class="nav-items" id="navItems">
-          <li class="nav-item">
-            <a href="#" class="nav-link">Create Account</a>
-          </li>
-          <li class="nav-item"><a href="#" class="nav-link">Login</a></li>
-          <li class="nav-item"><a href="#" class="nav-link">Library</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <h1>Wi-Fi QR Code Generator</h1>
-    <form id="wifiForm">
-      <label for="ssid">Wi-Fi SSID:</label>
-      <input type="text" id="ssid" name="ssid" required /><br />
-      <label for="password">Wi-Fi Password:</label>
-      <input type="password" id="password" name="password" required /><br />
-      <label for="security">Security Type:</label>
-      <select id="security" name="security" required>
-        <option value="WPA/WPA2">WPA/WPA2</option>
-        <option value="WEP">WEP</option>
-        <!-- Add more security types if needed --></select
-      ><br />
-      <button type="submit">Generate QR Code</button>
-    </form>
-    <div id="qrcode"></div>
-    <!-- Include your JavaScript code here -->
-    <script src="app.js"></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>WiFi QR Code Generator</title>
+</head>
+<body>
+  <h1>WiFi QR Code Generator</h1>
+  <form id="wifi-form">
+    <label for="ssid">SSID (Network Name)</label>
+    <input type="text" id="ssid" name="ssid" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Generate QR Code</button>
+  </form>
+  <div id="qr-container"></div>
+  <script src="app.js"></script>
+</body>
 </html>
