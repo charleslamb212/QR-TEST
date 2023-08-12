@@ -18,8 +18,31 @@ This project is a web application that generates WiFi QR codes for easy network 
 
 **Install dependencies:**
 
-- npm install
+- npm install node.js express.js qrcode
 
 **Run the Server:**
 
 - npm start
+
+## Usage
+
+- Enter your WiFi SSID (Network Name) and password in the provided form.
+- Click the "Generate QR Code" button.
+  The QR code for your WiFi network will be displayed.
+- Click the "Download QR Code" button to download the generated QR code image.
+
+## Technologies Used
+
+- HTML, CSS, JavaScript for the front-end.
+- Node.js and Express.js for the back-end.
+- qrcode library for generating QR codes.
+- Pico CSS for basic styling.
+
+## Author
+
+- [Charles Lamb]
+
+## Acknowledgements
+
+- Pico CSS for the lightweight CSS framework.
+- qrcode library for generating QR codes.
