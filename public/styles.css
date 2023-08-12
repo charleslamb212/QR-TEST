@@ -19,10 +19,10 @@
   text-align: center;
   padding: 20px;
   opacity: 0; /* Set initial opacity to 0 */
-  transition: opacity 1s ease; /* Add transition effect */
+  transition: opacity 2.2s ease; /* Add transition effect */
 }
 .qr-container.show {
-  opacity: 1; /* When the class is added, make QR container visible */
+  opacity: 5; /* When the class is added, make QR container visible */
 }
 
 .title {
@@ -34,4 +34,5 @@
 
 #download-btn {
   margin-top: 10px; /* Add margin to the download button */
+  width: 100%;
 }
