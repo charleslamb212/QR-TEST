@@ -1,6 +1,6 @@
 # QR-TEST
 
-![screen shot](./public/Screen%20Shot%202023-08-11%20at%209.48.10%20PM.png)
+![screen shot](./public/Screen%20Shot%202023-08-11%20at%2010.23.39%20PM.png)
 
 # WiFi QR Code Generator
 
