@@ -1,6 +1,10 @@
 # QR-TEST
 
-![screen shot](./public/Screen%20Shot%202023-08-11%20at%2010.23.39%20PM.png)
+<div style="text-align:center">
+    <img src="./public/Screen Shot 2023-08-11 at 10.23.39 PM.png" alt="Screen Sot">
+</div>
+
+<!-- ![screen shot](./public/Screen%20Shot%202023-08-11%20at%2010.23.39%20PM.png) -->
 
 # WiFi QR Code Generator
 
