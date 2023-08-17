@@ -42,10 +42,6 @@ This project is a web application that generates WiFi QR codes for easy network 
 - qrcode library for generating QR codes.
 - Pico CSS for basic styling.
 
-## Author
-
-- [Charles Lamb]
-
 ## Acknowledgements
 
 - Pico CSS for the lightweight CSS framework.
